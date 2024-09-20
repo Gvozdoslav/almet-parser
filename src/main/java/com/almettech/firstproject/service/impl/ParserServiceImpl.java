@@ -43,7 +43,7 @@ public class ParserServiceImpl implements ParserService {
 
         List<Individual> individualsYoungerThan20 = wrapper.getIndividuals()
                 .stream()
-                .filter(individual -> individual.getAge() > TWENTY_YEARS_AGE)
+                .filter(individual -> individual.getAge() < TWENTY_YEARS_AGE)
                 .toList();
 
         return parseCsvResponseMapper.map(wrapper.getEmployees().size(),

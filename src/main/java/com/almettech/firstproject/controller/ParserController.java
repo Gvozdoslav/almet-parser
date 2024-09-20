@@ -4,6 +4,7 @@ import com.almettech.firstproject.model.dto.ParseCsvRequestDto;
 import com.almettech.firstproject.model.dto.ParseCsvResponseDto;
 import com.almettech.firstproject.service.ParserService;
 import com.opencsv.exceptions.CsvException;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,7 +20,7 @@ public class ParserController {
     private final ParserService parserService;
 
     @PostMapping("/parse")
-    public ResponseEntity<ParseCsvResponseDto> parse(@ModelAttribute ParseCsvRequestDto request) {
+    public ResponseEntity<ParseCsvResponseDto> parse(@ModelAttribute @Valid ParseCsvRequestDto request) {
         try {
             return ResponseEntity.ok(parserService.parse(request));
         } catch (IOException | CsvException e) {
