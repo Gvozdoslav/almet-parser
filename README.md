@@ -15,9 +15,8 @@
 * ...
 * fieldValueN, ...
 * ...
-
-The default fields delimiter is `,`, you can configure it into the application.properties file
 3. Run the application
 4. Execute the `POST` request to the `http://localhost:8080/parse` with form-data content type, containing required `type` and `csvFile` fields (you can find the example of csv file in the root of the project)
 5. Unfortunately, only `JAVA` type is supported in this implementation
-5. See the result :)
+
+The default fields delimiter is `,`, you can configure it into the application.properties file
